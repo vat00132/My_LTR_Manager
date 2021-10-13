@@ -1,0 +1,77 @@
+﻿<Window x:Class="LTRManager.View.CrateSyncSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LTRManager.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Настройка синхронизации крейта" Height="270" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Background="{StaticResource MD_Teal_500}" BorderBrush="{StaticResource MD_Teal_500}" BorderThickness="1">
+            <GroupBox.Header>
+                <Span FontWeight="Bold">Входы разъема SYNC</Span>
+            </GroupBox.Header>
+            <StackPanel Background="White">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Row="0" Grid.Column="1" x:Name="OutputResolution" Content="Разрешение выходов"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="DIGOUT1" HorizontalAlignment="Right"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="DIGOUT2" HorizontalAlignment="Right"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" x:Name="DIGOUT1_ComboBox"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" x:Name="DIGOUT2_ComboBox"/>
+                    <!--<Button Grid.Row="3" Grid.Column="1" x:Name="InstallDIGOUT_Button" Content="Установить" Click="InstallDIGOUT_Button_Click"/>-->
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Background="{StaticResource MD_Teal_500}" BorderBrush="{StaticResource MD_Teal_500}" BorderThickness="1">
+            <GroupBox.Header>
+                <Span FontWeight="Bold">Метка СТАРТ</Span>
+            </GroupBox.Header>
+            <StackPanel Background="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Режим" HorizontalAlignment="Right"/>
+                    <ComboBox Grid.Column="1" x:Name="StartMark_ComboBox"/>
+                    <!--<Button Grid.Column="2" x:Name="InstallStartMark_Button" Content="Установить" Click="InstallStartMark_Button_Click"/>-->
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="2" Background="{StaticResource MD_Teal_500}" BorderBrush="{StaticResource MD_Teal_500}" BorderThickness="1">
+            <GroupBox.Header>
+                <Span FontWeight="Bold">Метка СЕКУНДА</Span>
+            </GroupBox.Header>
+            <StackPanel Background="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Режим" HorizontalAlignment="Right"/>
+                    <ComboBox Grid.Column="1" x:Name="SecondMark_ComboBox"/>
+                    <!--<Button Grid.Column="2" x:Name="InstallSecondMark_Button" Content="Запуск" Click="InstallSecondMark_Button_Click"/>-->
+                    <!--<Button Grid.Column="3" x:Name="StopSecondMark_Button" Content="Остановить" Click="StopSecondMark_Button_Click"/>-->
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+        <Button Grid.Row="3" Content="Закрыть" HorizontalAlignment="Right" x:Name="Close_Button" VerticalAlignment="Center" Height="30" Width="150" Click="Close_Button_Click"/>
+        <Button Grid.Row="3" Content="Сохранить" HorizontalAlignment="Left" x:Name="Save_Button" VerticalAlignment="Center" Height="30" Width="150" Click="Save_Button_Click"/>
+    </Grid>
+</Window>

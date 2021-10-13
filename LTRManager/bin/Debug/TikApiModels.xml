@@ -1,0 +1,2006 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TikApiModels</name>
+    </assembly>
+    <members>
+        <member name="T:TikApiModels.ApiCallNames.AuthorizationServiceNames">
+            <summary>
+            Имена API вызовов для AuthorizationService
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.AUTHORIZE_USER">
+            <summary>
+            Авторизация пользователя, принимает AuthorizationInfo, возвращает AuthorizedUserInfo
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.ADD_USER">
+            <summary>
+            Принимает VCore.Authorization.User
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.REMOVE_USER">
+            <summary>
+            Принимает Guid UserID
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.UPDATE_USER">
+            <summary>
+            Принимает VCore.Authorization.User
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.GET_USERS">
+            <summary>
+            Возвращает массив VCore.Authorization.User
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.GET_USED_DATABASES">
+            <summary>
+            Принимает AuthorizationInfo, возвращает UserDatabase[]
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.ADD_CONNECTION_INFO">
+            <summary>
+            Принимает ConnectionInfo
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.UPDATE_CONNECTION_INFO">
+            <summary>
+            Принимает ConnectionInfo
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.AuthorizationServiceNames.REMOVE_CONNECTION_INFO">
+            <summary>
+            Принимает Guid ConnectionInfoID
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.NeuralNetNames">
+            <summary>
+            Имена для DataEngine
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.NeuralNetNames.RESOLVE_CV_GUIDS">
+            <summary>
+            Получает данные Guid'ы свойств контрольных показателей для указанного датчика
+            <para>Принимает: указатель на датчик</para>
+            <para>Ответ: массив контрольных показателей с гуидами </para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.NeuralNetNames.READ_METERED_VALUES_LIMITS">
+            <summary>
+            Получает  уставки
+            /// <para>Принимает: указатель на датчик</para>
+            <para>Ответ: уставки</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.NeuralNetNames.READ_DATA_FOR_TRAINING">
+            <summary>
+            Получает данные по покнтрольным показателям, Применяет агрегирующие функции и возвращает агрегированные данные для построения датасэтов и обучения нейросети
+            <para>Принимает: массив контрольных показателей с гуидами</para>
+            <para>Ответ: массив данных</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.NeuralNetNames.READ_DATA_FOR_FORECAST">
+            <summary>
+            Получает данные по покнтрольным показателям, Применяет агрегирующие функции и возвращает агрегированные данные для построения датасэтов и прогона нейросети
+            <para>Принимает: массив контрольных показателей с гуидами</para>
+            <para>Ответ: массив данных</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.NeuralNetNames.READ_DATA_FOR_TRAINING_MULT_SENSORS">
+            <summary>
+            Получает данные по покнтрольным показателям, Применяет агрегирующие функции и возвращает агрегированные данные для построения датасэтов и обучения нейросети
+            <para>Принимает: массив контрольных показателей с гуидами</para>
+            <para>Ответ: массив данных</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.NeuralNetNames.READ_DATA_FOR_METERED_VALUES">
+            <summary>
+            получить данные для обучения по переданным DBMeteredValue 
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.NeuralNetNames.READ_DATA_FOR_FORECAST_FOR_METERED_VALUES">
+            <summary>
+            получить данные по для прогноза  переданным DBMeteredValue 
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.DataEngineNames">
+            <summary>
+            Имена для DataEngine
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.SAVE_DATAVALUE">
+            <summary>
+            Сохраняет значение, принимает JsonDataValue
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.SEND_TO_HISTORY">
+            <summary>
+            Отправляет значение в историческую таблицу
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.UPDATE_DATAVALUE">
+            <summary>
+            Обновляет данные
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_LAST_DATAVALUE">
+            <summary>
+            Возвращает последнее значение
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_LAST_DATAVALUES_OLD">
+            <summary>
+            Принимает параметр GetLastDataValueRecord
+            Старый метод сериализации
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_LAST_DATAVALUES">
+            <summary>
+            Принимает параметр GetLastDataValueRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_LAST_DATAVALUES_FOR_TIME_OLD">
+            <summary>
+            Принимает параметр GetLastDataValueForTimeRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_LAST_DATAVALUES_FOR_TIME">
+            <summary>
+            Принимает параметр GetLastDataValueForTimeRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_LAST_DATAVALUE_FOR_TIME">
+            <summary>
+            Принимает параметр GetDataValueForTimeRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_DATA_COUNT">
+            <summary>
+            Принимает параметр: GetDataValueForTimeRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_PREVIOUS_DATAVALUE_FOR_TIME">
+            <summary>
+            Принимает параметр GetDataValueForTimeRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_NEXT_DATAVALUE_FOR_TIME">
+            <summary>
+            Принимает параметр GetDataValueForTimeRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_RANGE_DATAVALUES_OLD">
+            <summary>
+            Принимает параметр GetRangeDataValuesRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_RANGE_DATAVALUES">
+            <summary>
+            Принимает параметр GetRangeDataValuesRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.DELETE_ALARMS">
+            <summary>
+            Удаление алармов временно!!!
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.ADD_ALARMS_HISTORY">
+            <summary>
+            Добавление алармов временно!!!
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_FILE">
+            <summary>
+            Принимает PropertyID, возвращает byte[]
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.SEND_FILE_DATAVALUE">
+            <summary>
+            Отправляет данные файла на сервер
+            Принимает PropertyID и byte[] с данными файла и DataValue
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.UPDATE_PROPERTY_HOSTORY_VALUE">
+            <summary>
+            Обновляет исторический признак свойства
+            <para>Принимает Pair(PropertyID, isHistory) </para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.UPDATE_PROPERTY_STORAGE_TYPE">
+            <summary>
+            Обновляет тип хранения свойства в файловой системе
+            <para>Принимает Pair(PropertyID, int storageType) </para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DataEngineNames.GET_SYNC_DATAVALUE">
+            <summary>
+            Получает данные синхронизации
+            <para>Принимает: GetSyncDataRecord</para>
+            <para>Ответ: JsonSyncDataValuesRecord </para>
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.DbContextNames">
+            <summary>
+            Имена для контекста базы данных
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_BEARINGS">
+            <summary>
+            Подшипники, Bearing
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_LIBRARY_CAT_RECORDS">
+            <summary>
+            Возвращает PouLibraryCategoryDBRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_USER_POU_RECORDS">
+            <summary>
+            Возвращает RuntimeRuleLinkRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_RULE_RECORDS">
+            <summary>
+            Возвращает FieldObjectRuleRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_RULE_LINK_RECORDS">
+            <summary>
+            Возвращает RuntimeRuleLinkRecord
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_MODEL_RECORDS">
+            <summary>
+            Возврщает: массив FieldObjectRecordDTO
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_MODELS">
+            <summary>
+            Возвращает: FieldObjectDTO
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_OBJECT_PROPERTY_DESC_RECORDS">
+            <summary>
+            Возвращает: массив ObjectPropertyDescriptorRecordDTO
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_OBJECT_PROPERTY_RECORDS">
+            <summary>
+            Возвращает: массив ObjectPropertyRecordDTO
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.DbContextNames.GET_OBJECT_PROPERTY_RECORDS_ONLY_DIAGNOSTIC">
+            <summary>
+            Возвращает: массив ObjectPropertyRecordDTO
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.RuleManagerNames">
+            <summary>
+            Имена для RuleManager
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.RuleManagerNames.GET_POU_BODY_XML">
+            <summary>
+            Возвращает POU BODY, string
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.RuleManagerNames.SET_RULE_MANAGER_STATE">
+            <summary>
+            Принимает bool
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.RuleManagerNames.GET_RULE_MANAGER_STATE">
+            <summary>
+            Возвращает состояние сервера правил, true - все правила работают без ошибок
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.RuleManagerNames.GET_RULE_MANAGER_PROCESS_STATE">
+            <summary>
+            Возвращает наличие процесса сервера правил
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.RuleManagerNames.Callback">
+            <summary>
+            Обратные вызов
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.BoolNames">
+            <summary>
+            Имена для SCADA, Boolean
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.BoolNames.GET_BOOL">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.BoolNames.WRITE">
+            <summary>
+            Принимает: тэг свойства + путь до модели + значение
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.DateTimeNames">
+            <summary>
+            Именя для SCADA, DateTime
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.DateTimeNames.GET_DATETIME">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.DiagnosticAlarmNames">
+            <summary>
+            Имена для SCADA, диагнозы
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.DiagnosticAlarmNames.GET_ALL_DIAGNOSTIC_ALARMS">
+            <summary>
+            Принимает: массив PropertyId
+            <para>Возвращает: массив DiagnosticAlarmDTO</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.DiagnosticAlarmNames.UPDATE_DIAGNOSTIC_ALARM">
+            <summary>
+            Принимает: DiagnosticAlarmDTO
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.DiagnosticAlarmNames.GET_ALARM_HISTORY">
+            <summary>
+            Принимает GetAlarmHistoryNode
+            <para>Возвращает массив DiagnosticAlarmDTO</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.DiagnosticAlarmNames.GET_ALARM_HISTORY_ON_MODEL">
+            <summary>
+            Принимает: GetAlarmHistoryForModelNode
+            <para>Возвращает: Массив DiagnosticAlarmDTO</para>
+            </summary>
+        </member>
+        <member name="F:TikApiModels.ApiCallNames.Scada.DiagnosticAlarmNames.GET_ROOT_MODEL_WITH_DIAGNOSTIC">
+            <summary>
+            Принимает: путь до объекта
+            <para>Возвращает: RootModelWithDiagnostic</para>
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.DoubleNames">
+            <summary>
+            Имена для CSADA, Double
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.DoubleNames.GET_DOUBLE">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.DurationNames">
+            <summary>
+            Имена для SCADA, TimeSpan
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.DurationNames.GET_DURATION">
+            <summary>
+            Scada.Duration.GetDuration
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.DurationNames.WRITE">
+            <summary>
+            Принимает: тэг свойства + путь до модели + значение
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.IntNames">
+            <summary>
+            Имена для SCADA, Integer
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.IntNames.GET_INT">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.IntNames.WRITE">
+            <summary>
+            Принимает: тэг свойства + путь до модели + значение
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.ScadaNames">
+            <summary>
+            Именя для SCADA
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.GET_IODEVICE_STATE">
+            <summary>
+            Возвращает IODeviceState
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.GET_RULE_STATE">
+            <summary>
+            Принимает:  Путь до объекта + имя правила + тег правила
+            <para>Возвращает: true - правило включено</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.CHANGE_RULE_STATE">
+            <summary>
+            Принимает: путь до объекта + имя правила + тег правила + состояние
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.GET_RUNNING_LIST">
+            <summary>
+            Принимает: путь до объекта + тэг типа модели + тэг наработки + тэг время в работе + тэг время включения + тэг время выключения
+            <para>Возвращает: массив RunningItem</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.GET_PROPERTY_VIEW_ITEMS">
+            <summary>
+            Принимает: путь до объекта + типы
+            <para>Возвращает: массив PropertyViewItem</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.CHECK_CONNECTION">
+            <summary>
+            Возвращает: true - есть соединения с API
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.CHECK_SQL_CONNECTION">
+            <summary>
+            Возвращает: true - есть соединения с SQL
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.Diagnostic">
+            <summary>
+            Диагнозы
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.Double">
+            <summary>
+            Double
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.DateTime">
+            <summary>
+            DateTime
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.Bool">
+            <summary>
+            Boolean
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.Int">
+            <summary>
+            Integer
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.String">
+            <summary>
+            String
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.Duration">
+            <summary>
+            Duration (TimeSpan)
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ScadaNames.ValueArray">
+            <summary>
+            Array
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.StringNames">
+            <summary>
+            Имена для SCADA
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.StringNames.GET_STRING">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.Scada.ValueArrayNames">
+            <summary>
+            Имена для SCADA, Array
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ValueArrayNames.GET_DIAGNOSTIC_ALARM_STATES">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            <para>Возвращает: DiagnosticAlarmStates</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ValueArrayNames.GET_DOUBLE_ARRAY">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ValueArrayNames.GET_DOUBLE_ARRAY_WITH_DATE">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            <para>Возвращает: DatedDoubleArray</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ValueArrayNames.GET_DIAGNOSTIC_STATES">
+            <summary>
+            Принимает: тэг свойства + путь до объекта
+            <para>Возвращает: DiagnosticStates</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ValueArrayNames.GET_DOUBLE_ARRAY_FROM_ARCHIVE_WITH_DATE">
+            <summary>
+            Принимает: conditionSQL1 + conditionSQL2 + archivalTime + тэг свойства + путь до объекта
+            <para>Возвращает: DatedDoubleArray</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.Scada.ValueArrayNames.GET_DOUBLE_ARRAY_FROM_DEFA_ARCHIVE_WITH_DATE">
+            <summary>
+            Принимает: archivalTime + тэг свойства + путь до объекта
+            <para>Возвращает: DatedDoubleArray</para>
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.RuleManagerCallbackNames">
+            <summary>
+            Обратные вызовы в RuleManager
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.RuleManagerCallbackNames.WRITE_DURATION">
+            <summary>
+            Принимает: тэг свойства + путь до модели + значение
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiCallNames.TikScada.TikScadaNames">
+            <summary>
+            Имена для TikSCADA
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.TikScada.TikScadaNames.ADD_LOG_RECORD">
+            <summary>
+            Добавить запись лога <para>
+            Принимает: TikScadaLogRecord</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.TikScada.TikScadaNames.UPDATE_LOG_RECORD">
+            <summary>
+            Обновляет запись лога <para>
+            Принимает: TikScadaLogRecord</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.TikScada.TikScadaNames.GET_LOG">
+            <summary>
+            Возвращает лог TikScadaLogRecord <para>
+            Принимает: GetScadaLogRecord</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.TikScada.TikScadaNames.GET_LOF_FOR_SOURCE_PATH">
+            <summary>
+            Возвращает лог TikScadaLogRecord <para>
+            Принимает: GetScadaLogRecord</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.TikScada.TikScadaNames.GET_PROPERTIES_ID">
+            <summary>
+            Возвращает ID свойств  Pair(Guid переменной, Guid свойства) <para>
+            Принимает массив Pair(Guid переменной, string путь свойства)</para>
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiCallNames.TikScada.TikScadaNames.GET_ALL_DEVICES">
+            <summary>
+            Возвращает все контроллеры и каналы всех объектов
+            </summary>
+        </member>
+        <member name="T:TikApiModels.ApiMethods">
+            <summary>
+            Наименования функций Api
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiMethods.DbContext">
+            <summary>
+            Контекст БД
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiMethods.DataEngine">
+            <summary>
+            Работа с данными
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiMethods.RuleManager">
+            <summary>
+            Сервер правил
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiMethods.Scada">
+            <summary>
+            Скада
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiMethods.TikScada">
+            <summary>
+            Тик скада
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiMethods.Authorization">
+            <summary>
+            Авторизация
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiMethods.NeuralNets">
+            <summary>
+            Нейросети
+            </summary>
+        </member>
+        <member name="P:TikApiModels.ApiMethods.LTRManager">
+            <summary>
+            LTR менеджер
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Authorization.DataEngineTypeDTO">
+            <summary>
+            Тип ЦОД
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Authorization.DataEngineTypeDTO.TCP">
+            <summary>
+            TCP
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Authorization.DataEngineTypeDTO.HTML">
+            <summary>
+            HTML
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Authorization.ApiDataEngineConnectionInfo">
+            <summary>
+            Информация подключения к ЦОД
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.ApiDataEngineConnectionInfo.Address">
+            <summary>
+            API адрес ЦОД
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.ApiDataEngineConnectionInfo.Port">
+            <summary>
+            Порт
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.ApiDataEngineConnectionInfo.DataEngineType">
+            <summary>
+            Тип ЦОД
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.Authorization.ApiDataEngineConnectionInfo.#ctor(System.String,System.Int32,TikApiModels.Models.Authorization.DataEngineTypeDTO)">
+            <summary>
+            Информация подключения к ЦОД
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.Authorization.ApiDataEngineConnectionInfo.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Authorization.AuthorizationInfo">
+            <summary>
+            Информация для авторизации пользователя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.AuthorizationInfo.Login">
+            <summary>
+            Логин
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.AuthorizationInfo.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.AuthorizationInfo.ServerName">
+            <summary>
+            Имя сервера в цоде
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.Authorization.AuthorizationInfo.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Информация для авторизации пользоваеля
+            </summary>
+            <param name="login"></param>
+            <param name="password"></param>
+            <param name="serverName"></param>
+        </member>
+        <member name="M:TikApiModels.Models.Authorization.AuthorizationInfo.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Authorization.DatabaseTypeDTO">
+            <summary>
+            Тип СУБД
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Authorization.DatabaseTypeDTO.MSSQL">
+            <summary>
+            Microsoft SQL Server
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Authorization.AuthorizedUserInfo">
+            <summary>
+            Информация авторизованного пользователя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.AuthorizedUserInfo.XmlPermissions">
+            <summary>
+            Права пользователя в формате Xml
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.AuthorizedUserInfo.UserID">
+            <summary>
+            Ид пользователя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.AuthorizedUserInfo.UserName">
+            <summary>
+            Имя пользователя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.AuthorizedUserInfo.DataEngineConnectionInfo">
+            <summary>
+            Инфомрауия подключения к ЦОД
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.Authorization.AuthorizedUserInfo.#ctor(System.String,TikApiModels.Models.Authorization.ApiDataEngineConnectionInfo,System.Guid,System.String)">
+            <summary>
+            Информация авторизованного пользователя
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.Authorization.AuthorizedUserInfo.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Authorization.UserDatabase">
+            <summary>
+            Информация о базе данных пользователя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.UserDatabase.Address">
+            <summary>
+            Адрес
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Authorization.UserDatabase.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.Authorization.UserDatabase.#ctor(System.String,System.String)">
+            <summary>
+            Информация о базе данных пользователя
+            </summary>
+            <param name="address">Адрес</param>
+            <param name="name">Имя</param>
+        </member>
+        <member name="M:TikApiModels.Models.Authorization.UserDatabase.#ctor">
+            <summary>
+            Информация о базе данных пользователя
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.DataEngine.GetDataValueForTimeRecord">
+            <summary>
+            API Запись для GET_LAST_DATAVALUE_FOR_TIME, GET_PREVIOUS_DATAVALUE_FOR_TIME, GET_DATA_COUNT
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetDataValueForTimeRecord.PropertyID">
+            <summary>
+            ID свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetDataValueForTimeRecord.ForTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DataEngine.GetDataValueForTimeRecord.#ctor(System.Guid,System.DateTime)">
+            <summary>
+            API Запись для GET_LAST_DATAVALUE_FOR_TIME, GET_PREVIOUS_DATAVALUE_FOR_TIME, GET_DATA_COUNT
+            </summary>
+            <param name="propertyID">ID свойства</param>
+            <param name="forTime"></param>
+        </member>
+        <member name="T:TikApiModels.Models.DataEngine.GetLastDataValueForTimeRecord">
+            <summary>
+            API запись для GET_LAST_DATAVALUES_FOR_TIME
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetLastDataValueForTimeRecord.PropertyID">
+            <summary>
+            ID свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetLastDataValueForTimeRecord.RowCount">
+            <summary>
+            Количество записей
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetLastDataValueForTimeRecord.EndTime">
+            <summary>
+            Последняя дата
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DataEngine.GetLastDataValueForTimeRecord.#ctor(System.Guid,System.DateTime,System.Int32)">
+            <summary>
+            API запись для GET_LAST_DATAVALUES
+            </summary>
+            <param name="propertyID">ID свойства</param>
+            <param name="endTime">ID свойства</param>       
+            <param name="rowCount">Количество записей</param>
+        </member>
+        <member name="T:TikApiModels.Models.DataEngine.GetLastDataValueRecord">
+            <summary>
+            API запись для GET_LAST_DATAVALUES
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetLastDataValueRecord.PropertyID">
+            <summary>
+            ID свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetLastDataValueRecord.RowCount">
+            <summary>
+            Количество записей
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DataEngine.GetLastDataValueRecord.#ctor(System.Guid,System.Int32)">
+            <summary>
+            API запись для GET_LAST_DATAVALUES
+            </summary>
+            <param name="propertyID">ID свойства</param>
+            <param name="rowCount">Количество записей</param>
+        </member>
+        <member name="T:TikApiModels.Models.DataEngine.GetRangeDataValuesRecord">
+            <summary>
+            API запись для GET_RANGE_DATAVALUES
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetRangeDataValuesRecord.PropertyID">
+            <summary>
+            ID свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetRangeDataValuesRecord.StartTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetRangeDataValuesRecord.EndTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DataEngine.GetRangeDataValuesRecord.#ctor">
+            <summary>
+            Конструктор по-умолчанию
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DataEngine.GetRangeDataValuesRecord.#ctor(System.Guid,System.DateTime,System.DateTime)">
+            <summary>
+            API Запись для GET_RANGE_DATAVALUES
+            </summary>
+            <param name="propertyID">ID свойства</param>
+            <param name="startTime"></param>
+            <param name="endTime"></param>
+        </member>
+        <member name="T:TikApiModels.Models.DataEngine.GetSyncDataRecord">
+            <summary>
+            Получает синхронные данные для SlavePropertyID используя MasterSyncID
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetSyncDataRecord.MasterSyncID">
+            <summary>
+            ИД синхронизации
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetSyncDataRecord.MasterPropertyID">
+            <summary>
+            Ид свойства мастера
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetSyncDataRecord.MasterDate">
+            <summary>
+            Дата синхронных данных у мастера
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetSyncDataRecord.SlavePropertyID">
+            <summary>
+            Зависимый ИД свойства для поиска
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetSyncDataRecord.MaxPreviousRecords">
+            <summary>
+            Максимальое количество записей для поиска
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.GetSyncDataRecord.SearchSyncPair">
+            <summary>
+            Искать пару синхронизации если не найдет MasterSyncId
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DataEngine.GetSyncDataRecord.#ctor">
+            <summary>
+            Получсет синхронные данные для SlavePropertyID используя MasterSyncID
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DataEngine.GetSyncDataRecord.#ctor(System.Guid,System.Guid,System.DateTime,System.Guid,System.Int32,System.Boolean)">
+            <summary>
+            Получает синхронные данные для SlavePropertyID используя MasterSyncID
+            </summary>
+            <param name="masterSyncID"></param>
+            <param name="masterPropertyID"></param>
+            <param name="masterDate"></param>
+            <param name="slavePropertyID"></param>
+            <param name="maxPreviousRecords"></param>
+            <param name="searchSyncPair"></param>
+        </member>
+        <member name="T:TikApiModels.Models.DataEngine.SendFileRecord">
+            <summary>
+            Модель для пересылки файла через API
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.SendFileRecord.PropertyId">
+            <summary>
+            ИД свойства к которому отправляется файл
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.SendFileRecord.FileData">
+            <summary>
+            Данные файла
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DataEngine.SendFileRecord.JsonDataValue">
+            <summary>
+            ObjectDataValue в JSON представлении
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.BearingFrequenciesDTO.BPFO">
+            <summary>
+            Ball Pass Frequency of Outer ring
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.BearingFrequenciesDTO.BPFI">
+            <summary>
+            Ball Pass Frequency of Inner ring
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.BearingFrequenciesDTO.BSF">
+            <summary>
+            Ball Spin Frequency
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.BearingFrequenciesDTO.FTF">
+            <summary>
+            Fundamental Train Frequency
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.CreytConfigDTO.DEFAULT_SAMPLES_FILENAME">
+            <summary>
+            Имя файла быстрых выборок по-умолчанию
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.CreytConfigDTO.PrimaryIP">
+            <summary>
+            ИП адрес основного интерфейсного модуля
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.CreytConfigDTO.SecondaryIP">
+            <summary>
+            ИП адрес резервного интерфейсного модуля
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.CreytConfigDTO.PrimaryModbusPort">
+            <summary>
+            ИП адрес резервного интерфейсного модуля
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.CreytConfigDTO.IsSyncReadSlave">
+            <summary>
+            Ведомый для синхронного чтения выборок
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.CreytConfigDTO.SyncReadGroupName">
+            <summary>
+            Имя группы для синхронного чтения
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.DbContext.FieldObjectDTO">
+            <summary>
+            DTO дял FieldObject
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.ID">
+            <summary>
+            Ид
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.TagName">
+            <summary>
+            Метка
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.TemplateName">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.FromTemplateName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.ParentId">
+            <summary>
+            Ид родителя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.Parent">
+            <summary>
+            Родитель
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.FullSearchName">
+            <summary>
+            Полное имя поиска SCADA
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.Childs">
+            <summary>
+            Дети
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectDTO.Properties">
+            <summary>
+            Свойства
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DbContext.FieldObjectDTO.#ctor">
+            <summary>
+            DTO для FieldObject
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DbContext.FieldObjectDTO.#ctor(TikApiModels.Models.DbContext.FieldObjectRecordDTO,TikApiModels.Models.DbContext.FieldObjectDTO)">
+            <summary>
+            DTO для FieldObject
+            </summary>
+            <param name="record"></param>
+            <param name="parent"></param>
+        </member>
+        <member name="M:TikApiModels.Models.DbContext.FieldObjectDTO.GetAll">
+            <summary>
+            Возвращает все модели
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRecordDTO.ID">
+            <summary>
+            Уникальный идентификтор
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRecordDTO.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRecordDTO.TagName">
+            <summary>
+            Имя тэга
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRecordDTO.ParentID">
+            <summary>
+            Уникальный идентификатор родительского объекта
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRecordDTO.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRecordDTO.TemplateName">
+            <summary>
+            Имя шаблона, котрому принадлежит объект
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRecordDTO.FromTemplateName">
+            <summary>
+            Имя шаблона из которого было образовано это свойство
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRuleDTO.ObjectRuleID">
+            <summary>
+            Уникальный идентификатор правила объекта
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.FieldObjectRuleDTO.ObjectID">
+            <summary>
+            Идентификатор объекта, которому принадлежит правило
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardConfigDTO.ConfigId">
+            <summary>
+            Уникальный номер конфигурации в БД
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardConfigDTO.VirtualSlot">
+            <summary>
+            Виртуальный слот (0 - 127)
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardConfigDTO.SamplingRate">
+            <summary>
+            Частота дискретизации выборки, кГц
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardConfigDTO.OperationMode">
+            <summary>
+            Режим работы Л-карты
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardConfigDTO.TimerSamplingTime">
+            <summary>
+            Длительность выборки по таймеру, с
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardConfigDTO.TimerScanTime">
+            <summary>
+            Период сбора выборки по таймеру, с
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardConfigDTO.SyncSamplingTime">
+            <summary>
+            Длительность выборки по синхронизации, с
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.ConfigId">
+            <summary>
+            Guid конфигурации Л-карты
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.InputNumber">
+            <summary>
+            Номер входа
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.InputType">
+            <summary>
+            Тип подключения сигнала
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.TimerPropertyId">
+            <summary>
+            Guid привязанного свойства по таймеру
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.SyncPropertyId">
+            <summary>
+            Guid привязанного свойства по синхронизации
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.InputRange">
+            <summary>
+            Диапазон входа по напряжению
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.IsScale">
+            <summary>
+            Нужно ли масштабирование
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.MinRaw">
+            <summary>
+            MinRaw
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.MaxRaw">
+            <summary>
+            MaxRaw
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.MinEU">
+            <summary>
+            MinEU
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.MaxEU">
+            <summary>
+            MaxEU
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.LCardLogicInputConfigDTO.MeasureUnitId">
+            <summary>
+            Guid единицы измерения
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.DbContext.PropertyTypeEnumDTO">
+            <summary>
+            Тип свойства
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.Unknown">
+            <summary>
+            Неизвестно
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.Boolean">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.Integer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.Long">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.Double">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.String">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.DateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.Duration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.DataSample">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.IntArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.FloatArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.DiagnosticArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.File">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.FloatMultiDimArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.DbContext.PropertyTypeEnumDTO.DateTimeArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO">
+            <summary>
+            DTO для описания свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO.ID">
+            <summary>
+            Ид
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO.TagName">
+            <summary>
+            Метка
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO.NodeID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO.PropertyType">
+            <summary>
+            Тип
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO.DefaultMeasureUnitID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.DbContext.ObjectPropertyDTO">
+            <summary>
+            DTO для свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDTO.ID">
+            <summary>
+            Ид
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDTO.Owner">
+            <summary>
+            Владелец свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDTO.Descriptor">
+            <summary>
+            Описание поля
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDTO.MeasureUnitID">
+            <summary>
+            Идентификтор единицы измерения
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO">
+            <summary>
+            DTO для свойства модели
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO.PropertyID">
+            <summary>
+            Ид свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO.ObjectID">
+            <summary>
+            Ид модели
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO.PropertyDescriptorID">
+            <summary>
+            Ид описания свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO.MeasureUnitID">
+            <summary>
+            Ид ед. измерения
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO.MaxRecords">
+            <summary>
+            Максимальное количество записей
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO.FromTemplateName">
+            <summary>
+            Имя шаблона
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO.ToCopy">
+            <summary>
+            Копировать значения в шаблонизированные модели
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyRecordDTO.SaveHistory">
+            <summary>
+            Сохранять историю
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.SiemensLogicInputConfigDTO.ConfigId">
+            <summary>
+            Guid конфигурации Siemens
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.SiemensLogicInputConfigDTO.Number">
+            <summary>
+            Номер входа
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.SiemensLogicInputConfigDTO.PropertyId">
+            <summary>
+            Guid привязанного свойства
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO">
+            <summary>
+            Описание свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO.ID">
+            <summary>
+            ИД
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO.Name">
+            <summary>
+            Наименование
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO.TagName">
+            <summary>
+            Метка
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO.PropertyType">
+            <summary>
+            Тип свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO.DefaultMeasureUnitID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO.#ctor">
+            <summary>
+            Описание свойства
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.DbContext.ObjectPropertyDescriptorDTO.#ctor(TikApiModels.Models.DbContext.ObjectPropertyDescriptorRecordDTO)">
+            <summary>
+            Описание свойства
+            </summary>
+            <param name="record"></param>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.DatedDoubleArray">
+            <summary>
+            Датированное значение
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DatedDoubleArray.Value">
+            <summary>
+            Значение
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DatedDoubleArray.Date">
+            <summary>
+            Дата
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.DiagnosticAlarmStateDTO">
+            <summary>
+            Состояние диагностического аларма
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticAlarmStateDTO.Normal">
+            <summary>
+            Норма
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticAlarmStateDTO.Armed">
+            <summary>
+            Взведен (есть аларм)
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticAlarmStateDTO.Acked">
+            <summary>
+            Квитирован
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticAlarmStateDTO.Repaired">
+            <summary>
+            Исправлен
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.DiagnosticAlarmDTO">
+            <summary>
+            Диагнозы Data transfer object
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmDTO.AlarmState">
+            <summary>
+            Состояние аларма
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmDTO.Comment">
+            <summary>
+            Комментарий
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmDTO.Confirmed">
+            <summary>
+            Подтвержден
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmDTO.Date">
+            <summary>
+            Дата
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmDTO.DiagAlarmID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmDTO.DiagData">
+            <summary>
+            Диагноз
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmDTO.PropertyID">
+            <summary>
+            ID свойства
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.DiagnosticAlarmStates">
+            <summary>
+            Состояния аларм диагнозов
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmStates.Normal">
+            <summary>
+            Нормальный
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmStates.Armed">
+            <summary>
+            Взведен
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmStates.Acked">
+            <summary>
+            Квитирован
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmStates.Repaired">
+            <summary>
+            Починен
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticAlarmStates.DiagStates">
+            <summary>
+            Диагностические состояния
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.DiagnosticDefectStateDTO">
+            <summary>
+            Состояние дефекта
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticDefectStateDTO.Unknown">
+            <summary>
+            Нет
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticDefectStateDTO.NotProcessed">
+            <summary>
+            Неопределено
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticDefectStateDTO.Normal">
+            <summary>
+            Норма
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticDefectStateDTO.Low">
+            <summary>
+            Низкий
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticDefectStateDTO.Medium">
+            <summary>
+            Средний
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticDefectStateDTO.High">
+            <summary>
+            Высокий
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.DiagnosticDefectTypeDTO">
+            <summary>
+            Тип диагноза
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticDefectTypeDTO.Triggering">
+            <summary>
+            Срабатывающий
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.Scada.DiagnosticDefectTypeDTO.Floating">
+            <summary>
+            Плавающий
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.DiagnosticDataDTO">
+            <summary>
+            Диагноз
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticDataDTO.ID">
+            <summary>
+            Уникальный идентификатор записи диагноза
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticDataDTO.DefectState">
+            <summary>
+            Состояние диагноза
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticDataDTO.TagName">
+            <summary>
+            Метка диагноза
+            Зарезервирована для отчетов. Для выборки только определенных дефектов.
+            (может и не понадобится)
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticDataDTO.DefectName">
+            <summary>
+            Название дефекта
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticDataDTO.DefectDetails">
+            <summary>
+            Деатальное пояснение дефекта
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticDataDTO.Recommendations">
+            <summary>
+            Рекомендации по исправлению дефекта
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticDataDTO.Priority">
+            <summary>
+            Приоритет диагноза
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticDataDTO.GroupName">
+            <summary>
+            Название группы диагнозов
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.DiagnosticStates">
+            <summary>
+            Диагностические состояния
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticStates.Unknown">
+            <summary>
+            Нет
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticStates.NotProcessed">
+            <summary>
+            Неопределено
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticStates.Normal">
+            <summary>
+            Норма
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticStates.Low">
+            <summary>
+            Слабый
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticStates.Medium">
+            <summary>
+            Средний
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.DiagnosticStates.High">
+            <summary>
+            Высокий
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.GetAlarmHistoryForModelNode">
+            <summary>
+            Нода для запроса истории модели
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.GetAlarmHistoryForModelNode.ModelPath">
+            <summary>
+            Путь модели
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.GetAlarmHistoryForModelNode.Date">
+            <summary>
+            Дата
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.GetAlarmHistoryNode">
+            <summary>
+            Нода для запроса истории аларма
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.GetAlarmHistoryNode.DiagAlarm">
+            <summary>
+            Аларм диагноз
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.GetAlarmHistoryNode.Date">
+            <summary>
+            дата
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.IODeviceState">
+            <summary>
+            Состояние устройства ввода/вывода
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.IODeviceState.Path">
+            <summary>
+            Путь до устройства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.IODeviceState.IsEnabled">
+            <summary>
+            Включен
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.Scada.IODeviceState.#ctor(System.String,System.Boolean)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="path"></param>
+            <param name="isEnabled"></param>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.PropertyViewItem">
+            <summary>
+            Элемент просмотра свойств
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.PropertyViewItem.Value">
+            <summary>
+            Значение
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.PropertyViewItem.Date">
+            <summary>
+            Дата
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.PropertyViewItem.Descriptor">
+            <summary>
+            Описание свойства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.PropertyViewItem.PropertyId">
+            <summary>
+            Ид свойства
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.Scada.RunningItem">
+            <summary>
+            Элемент списка наработки
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.RunningItem.ModelPath">
+            <summary>
+            Путь до модели
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.RunningItem.ModelName">
+            <summary>
+            Имя модели
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.RunningItem.ModelTagName">
+            <summary>
+            Метка модели
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.RunningItem.RunningTime">
+            <summary>
+            Наработка
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.RunningItem.TimeOfWork">
+            <summary>
+            Время в работе
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.RunningItem.TimeOn">
+            <summary>
+            Время включения
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.Scada.RunningItem.TimeOff">
+            <summary>
+            Время выключения
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.TikScada.DeviceTypeDTO">
+            <summary>
+            Тип устройства
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.TikScada.DeviceTypeDTO.Controller">
+            <summary>
+            Контроллер
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.TikScada.DeviceTypeDTO.Channel">
+            <summary>
+            Канал
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.TikScada.DeviceTypeDTO.UnbindedChannel">
+            <summary>
+            Непривязанные канал
+            </summary>
+        </member>
+        <member name="F:TikApiModels.Models.TikScada.DeviceTypeDTO.Sensor">
+            <summary>
+            Чувствительный элемент (ЧЭ)
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.TikScada.DeviceRecordDTO">
+            <summary>
+            Запись для устройства (канал, контроллер или ЧЭ)
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.DeviceRecordDTO.Serial">
+            <summary>
+            Серийный номер устройства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.DeviceRecordDTO.CheckDate">
+            <summary>
+            Дата поверки
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.DeviceRecordDTO.Model">
+            <summary>
+            Модель устройства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.DeviceRecordDTO.Type">
+            <summary>
+            Тип устройства
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.DeviceRecordDTO.Path">
+            <summary>
+            Путь до объекта, который является устройством
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.TikScada.DeviceRecordDTO.#ctor(TikApiModels.Models.TikScada.ObjectDataValueDTO,TikApiModels.Models.TikScada.ObjectDataValueDTO,TikApiModels.Models.TikScada.ObjectDataValueDTO,TikApiModels.Models.TikScada.DeviceTypeDTO,System.String)">
+            <summary>
+            Запись для устройства (канал, контроллер или ЧЭ)
+            </summary>
+            <param name="model"></param>
+            <param name="checkDate"></param>
+            <param name="serial"></param>
+            <param name="type"></param>
+            <param name="id"></param>
+            <param name="parentID"></param>
+            <param name="path"></param>
+        </member>
+        <member name="T:TikApiModels.Models.TikScada.GetScadaLogRecord">
+            <summary>
+            Запись для запроса лога тик скады
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.GetScadaLogRecord.StartDate">
+            <summary>
+            Дата начала лога
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.GetScadaLogRecord.AggregatePath">
+            <summary>
+            Путь агрегата, если Empty, то тянется весь лог
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.TikScada.GetScadaLogRecord.#ctor(System.DateTime,System.String)">
+            <summary>
+            Запись для запроса лога тик скады
+            </summary>
+            <param name="startDate"></param>
+            <param name="aggregatePath"></param>
+        </member>
+        <member name="M:TikApiModels.Models.TikScada.GetScadaLogRecord.#ctor">
+            <summary>
+            Запись для запроса лога тик скады
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.ConfigId">
+            <summary>
+            Guid конфигурации TikScada
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.ReportProperty">
+            <summary>
+            Guid привязанного свойства для отчетов
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.TypeProperty">
+            <summary>
+            Guid привязанного свойства для типа
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.DateInfoProperty">
+            <summary>
+            Guid привязанного свойства для даты info
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.DateWarningProperty">
+            <summary>
+            Guid привязанного свойства для даты warning
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.DateErrorProperty">
+            <summary>
+            Guid привязанного свойства для даты Error
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.DateSetpointProperty">
+            <summary>
+            Guid привязанного свойства для даты setpoint
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.DateValueChangedProperty">
+            <summary>
+            Guid привязанного свойства для даты value changed
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.DateSetpoint2Property">
+            <summary>
+            Guid привязанного свойства для даты setpoint2
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.TikScada.TikScadaLogicInputConfigDTO.PathObject">
+            <summary>
+            Путь объекта
+            </summary>
+        </member>
+        <member name="T:TikApiModels.Models.UserAuthorizationInfo">
+            <summary>
+            Информация об авторазации пользователя
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.UserAuthorizationInfo.IsAuthorized">
+            <summary>
+            Флаг авторазации
+            </summary>
+        </member>
+        <member name="P:TikApiModels.Models.UserAuthorizationInfo.Token">
+            <summary>
+            Закрытый токен
+            </summary>
+        </member>
+        <member name="M:TikApiModels.Models.UserAuthorizationInfo.#ctor(System.Boolean,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="isAuthorized">Флаг авторизации</param>
+            <param name="token">Закрытый токен</param>
+        </member>
+    </members>
+</doc>

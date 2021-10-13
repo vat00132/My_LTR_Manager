@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <ApplicationLogPath Value="" />
+  <UserLogPath Value="" />
+  <MaxAllocatedSize Value="0" />
+  <IsSingleWindow Value="true" />
+  <RuleFullCycleSleepTime Value="1000" />
+  <RuleZeroLevelSleepTime Value="1000" />
+</Settings>

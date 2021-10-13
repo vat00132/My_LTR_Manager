@@ -1,0 +1,67 @@
+﻿<Window x:Class="LTRManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LTRManager.View"
+        mc:Ignorable="d"
+        Title="LTR Manager"
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/LTRManager;component/Design.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{StaticResource MD_Teal_500}">
+            <Menu Height="25" VerticalAlignment="Top" Background="{StaticResource MD_Teal_500}">
+                <MenuItem>
+                    <MenuItem.Header>
+                        <Span FontWeight="Bold">ltrd</Span>
+                    </MenuItem.Header>
+                    <MenuItem x:Name="ConnectLtrd" Header="Установить соединение с ltrd"  IsEnabled="{Binding IsConnectLtrd}" Click="ConnectLtrd_Click"/>
+                    <MenuItem x:Name="DisconnectLtrd" Header="Разорвать соединение с ltrd" IsEnabled="{Binding IsDisconnectLtrd}" Click="DisconnectLtrd_Click"/>
+                    <MenuItem x:Name="SettingLtrd" Header="Настройки ltrd" Click="SettingLtrd_Click" IsEnabled="{Binding IsDisconnectLtrd}"/>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItem.Header>
+                        <Span FontWeight="Bold">Крейт</Span>
+                    </MenuItem.Header>
+                    <MenuItem x:Name="SyncCrateSetting" Header="Синхронизация крейта" IsEnabled="{Binding SelectCrate}" Click="SyncCrateSetting_Click"/>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItem.Header>
+                        <Span FontWeight="Bold">Модуль</Span>
+                    </MenuItem.Header>
+                    <MenuItem x:Name="ResetModule" Header="Сброс модуля"  IsEnabled="{Binding SelectModule}" Click="ResetModule_Click"/>
+                </MenuItem>
+            </Menu>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <local:TreeCratesControl Grid.Row="0" Grid.Column="0" x:Name="TreeCratesControlInstance"/>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <local:StatisticsControl Grid.Row="0" x:Name="StatisticsControlInstance"/>
+                <local:IPAddressCrateControl Grid.Row="1" x:Name="IPAddressCrateControlInstance"/>
+            </Grid>
+        </Grid>
+        <local:LogInformationControl Grid.Row="2" x:Name="LogInformationControlInstance"/>
+    </Grid>
+</Window>

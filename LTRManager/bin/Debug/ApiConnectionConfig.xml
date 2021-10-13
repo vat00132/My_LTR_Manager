@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <ConnectionConfig ApiAddress="127.0.0.1" ApiPort="9997" Login="local" Password="123" LastServerName="MobComplex" PathCountMemoryOfRule="" CycleTimeMemoryOfRule="0" ConnectTimeout="50000" />
+</Root>
